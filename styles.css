@@ -23,7 +23,6 @@ html, body {
     which was unnecessary. */
 body {
     height: 100vh;
-
     font-size: 110%;
 }
 
@@ -37,8 +36,9 @@ body {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    position: fixed;
     background-position: center;
+    position: fixed;
+    top: 0;  
     z-index: -99;
 }
 
@@ -67,6 +67,7 @@ body {
     width: 100%;
     height: 5rem;
     position: fixed;
+    top: 0;
 }
 
 /*  setting responsive width and height on all li */
