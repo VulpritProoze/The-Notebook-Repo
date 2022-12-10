@@ -1,0 +1,313 @@
+/* creating custom css properties */
+/* this reduces the need to keep typing things that keeps repeating on the same css */
+/* ayaw lng ni itangtang sir :)))) */
+:root {
+    --main-color: black;
+    --second-color: #ff4d6d;
+    --third-color: #201F41;
+    --light-color: #d3d3d3;
+    --misc-color: #0c121c;
+}
+
+/* allows padding to be calculated for the box model's width */
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--light-color);
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+/*  overflow-x is hidden because, for some reason the width randomly extends a bit
+    which was unnecessary. */
+body {
+    height: 100vh;
+
+    font-size: 110%;
+}
+
+/*  style rule for background... supposedly a header image but realized it
+    it can also be a background image for body... either way it's prolly
+    better to call it header image, no? i think i'm going to be doing
+    that now */
+/*  eh.. nvm about the names... background seems more consistent */
+.background {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    background-position: center;
+    z-index: -99;
+}
+
+/*  navigation style rules */
+/*  removing unneeded features of ul and li and a */
+#normal-nav ul {
+    margin: 0;
+    padding: 0;
+}
+    #normal-nav li {
+        padding: 0;
+        list-style: none;
+    }
+    #normal-nav a {
+        text-decoration: none;
+    }
+    /*  style of a and all texts */
+    #normal-nav a, p {
+        color: whitesmoke;
+        font-family: Arial;
+    }
+
+/*  general styles */
+#normal-nav {
+    z-index: 99;
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+}
+
+/*  setting responsive width and height on all li */
+#normal-nav .main-menu,
+#normal-nav .sub-menu,
+#normal-nav li {
+    width: 100%;
+    height: 100%;
+}
+#normal-nav .normal-nav-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    z-index: 0;
+    background: var(--main-color);
+    border-bottom: 4px solid var(--third-color);
+    z-index: 1;
+    padding: 0 2rem;
+    /* column-gap will need media query to do some changes during certain screen sizes */
+    column-gap: 20rem;
+}
+    @media only screen and (max-width: 1200px){
+        #normal-nav .normal-nav-wrapper {
+            column-gap: 10rem;
+        }
+    }
+    @media only screen and (max-width: 1100px){
+        #normal-nav .normal-nav-wrapper {
+            column-gap: 5rem;
+        }
+    }
+    @media only screen and (max-width: 900px){
+        #normal-nav .normal-nav-wrapper {
+            column-gap: 1rem;
+        }
+    }
+
+    #normal-nav .nav-logo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex: 1; /* occupy 1/3 of nav */
+    }
+        #normal-nav .nav-logo a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            column-gap: 20px;
+            justify-content: space-around;
+            align-items: center;
+        }
+    #normal-nav .main-menu {
+        flex: 3; /* occupy 2/3 of nav */
+        display: flex;
+        flex-direction: row;
+        /* moved border bottom to main menu li cuz of hover issues on submenu */
+    }
+        /*  unique styles for main-menu direct children */
+        #normal-nav .main-menu > li {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+#normal-nav .sub-menu {
+    height: 40vh;
+    z-index: -1;
+    position: absolute;
+    flex-direction: column;
+    top: 100%;
+    background: var(--main-color);
+    border-bottom: 4px solid var(--third-color);
+    /*  transition */
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    width: -100%;
+    transform: translateY(-100%);
+    transition: all .5s ease, visibility .5s linear 0s;
+}
+    /*  show sub-menu when the repository li is hovered */
+    #normal-nav .main-menu > li:nth-child(4):hover .sub-menu {
+        visibility: visible;
+        opacity: 1;
+        width: 100%;
+        transform: translateY(0);
+        z-index: -1;
+    }
+        /*  unique styles for sub-menu direct children */
+        #normal-nav .sub-menu > li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: .5px solid rgb(39, 37, 37);
+            text-align: center;
+        }
+/*  text transition effects when hovered */
+#normal-nav .main-menu a:hover span {
+    filter: contrast(0);
+}
+    #normal-nav .main-menu a::after {
+        content: "";
+        width: 0;
+        border-bottom: 2.5px solid var(--second-color);
+        transition: width .2s ease;
+        display: block;
+        margin-top: 4px;
+    }
+    #normal-nav .main-menu a:hover::after {
+        width: 100%;
+    }
+
+/*  global header style rule (main header) */
+/*  I have two headers: one for background-image and one for main header */
+/*  general style rules for .main-header */
+header.main-header {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/*  content-wrapper is the main area of my webpages. */
+/*  purpose: instead of using main directly, i opted to use a div instead. i was thinking if maybe i would use aside at some point and is also part of one of the important information for the webpages. although there really wasn't, it's better to be safe than sorry. */
+.content-wrapper {
+    position: relative;
+    padding: 15rem 10rem;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/*  general style rules for main content */
+main {
+    line-height: 200%;
+}
+
+/* universal. though i can choose to override this with embedded */
+main .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15rem;
+}
+
+/*  footer */
+#main-footer {
+    width: 100%;
+}
+    #main-footer .footer-wrapper {
+        row-gap: 1rem;
+        width: 100%;
+        height: 100%;
+        padding: 10rem 10rem 5rem;
+        background: var(--main-color); 
+        border-top: 4px solid var(--third-color);
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: flex-start;
+    }   
+        #main-footer a {
+            text-decoration: none;
+            letter-spacing: 3px;
+            display: inline;
+        }  
+        #main-footer .link-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            column-gap: 3rem;
+        }
+            #main-footer .link-wrapper i {
+                font-size: 200%;
+                object-fit: cover;
+                color: var(--light-color);
+                border-radius: 50%;
+            }
+/* gray links when hovered */
+#main-footer a:hover {
+    filter: contrast(0);
+}
+
+/* attempt to style scroll bar for extra cool points*/
+/* width of scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+/*  changing the styles of the background thing behind the scrollbar itself */
+::-webkit-scrollbar-track {
+    background: #362f2f;
+}
+
+/*  Handle */
+/*  thumb is the scrollbar itself */
+::-webkit-scrollbar-thumb {
+    background: #1A0F17; 
+    border-radius: 5px;
+}
+
+/*  Handle on hover */
+/*  when handle is hovered, change color*/
+::-webkit-scrollbar-thumb:hover {
+    background: #280000; 
+}
+
+/*  media query style rules  */
+/*  the smallest screen size i should be able to cater is 350px in width. less than that and only God knows what will happen */
+/*  list of media query screen sizes: 
+    1100px, 550px, 450px in here. 
+    550px in fact-dump-card css. 
+    450px and 1100px in fact-dump-header css 
+    1100px, 750px, 500px for works html header 550px for works html main images */
+@media only screen and (max-width: 1100px){
+    .content-wrapper {
+        padding: 10rem 5rem;
+    }
+}
+@media only screen and (max-width: 550px){
+    .content-wrapper {
+        padding: 10rem 2rem;
+    }
+    #main-footer .footer-wrapper {
+        padding: 5rem;
+    }
+}
+@media only screen and (max-width: 450px){
+    .content-wrapper {
+        padding: 10rem 1rem;
+    }
+    #main-footer .footer-wrapper {
+        padding: 2.5rem;
+    }
+}
+
+/*  for the nav media query */
+/*  planned width: 800px */
+/*  will continue at some point */
+/*  plan: make a different navigation bar that will only appear once screen size below 800px. it will be display none all the time. once screen size is 800px, it displays while the original navigation will hide... and vice versa */
+/*  the plan is done! the media query is in mobile-nav css */

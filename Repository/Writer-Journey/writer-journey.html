@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- general styles (external) -->
+	<link rel="stylesheet" type="text/css" href="../../styles.css">
+	<!-- mobile nav external stylesheet -->
+	<link rel="stylesheet" href="../../mobile-nav.css">
+	<!-- common header external stylesheet -->
+	<link rel="stylesheet" href="../../common-header.css">
+	<!-- font awesome icons external stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="../../Images/logo2.ico">
+	<title>Writer's Journey - Notebook</title>
+	<style>
+		/* url for background img */
+		.background {
+			background-image: url(Images/piano.jpg);
+		}
+
+		/* main style rules for creative html */
+        main .main-wrapper {
+            row-gap: 50px;
+        }
+            main .main-text-wrapper p {
+                text-indent: 40px;
+            }
+        /* progress bar */
+        main #writing-progress .progress-container {
+            width: 100%;
+            height: 2rem;
+            display: flex;
+            padding: 0 10px;
+            align-items: center;
+            border-radius: 2px;
+            background: #393E46;
+        }
+            main #writing-progress .progress-bar {
+                width: 95%; /* 90 perc for progress-bar 10 perc for p */
+                height: 80%;
+                position: relative;
+                border-radius: 2px;
+                overflow: hidden;
+                background: #6B728E;
+            }
+                main #writing-progress .progress-value {
+                    width: 1%;
+                    height: 100%;
+                    background: var(--third-color);
+                }
+                main #writing-progress p {
+                    width: 5%;
+                    height: 100%;
+                    color: #D6E4E5;
+                    text-align: center;
+                }
+        /* for main gallery */
+		#writer-gallery {
+			width: 100%;
+        }
+            #writer-gallery .image-wrapper {
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                gap: 1vw;
+            }
+                #writer-gallery img {
+                    width: 100%;
+					display: block;
+                }
+        /* make image go full height on click using checkbox hack */
+        #writer-gallery .image-wrapper input {
+            display: none;
+        }
+            #writer-gallery label {
+                position: relative;
+                transition: width .5s ease;
+                width: 250px;
+                overflow: hidden;
+            }
+                #check1:checked + .img1,
+                #check2:checked + .img2,
+                #check3:checked + .img3,
+                #check4:checked + .img4,
+                #check5:checked + .img5,
+                #check6:checked + .img6,
+                #check7:checked + .img7 {
+                    width: 100%;
+                }
+        /* when image is hovered, tooltip fades in */
+        #writer-gallery span {
+            text-align: center;
+            line-height: 1.4rem;
+        }
+            #writer-gallery .transition {
+                padding: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 10%;
+                background: rgba(0, 0, 0, 0.7);
+                /* transition properties */
+                opacity: 0;
+                visibility: 0;
+                transform: translateY(-100%);
+                transition: opacity .3s ease, visibility .3s linear 0s, transform .3s ease;
+            }
+                #writer-gallery label:hover .transition {
+                    opacity: 1;
+                    transition-delay: 0s;
+                    transform: translateY(0);
+                }
+	</style>
+</head>
+<body>
+	<!-- header.background will be used for all other pages -->
+    <header class="background"></header>
+    <!-- header.background ends here -->
+    <!-- normal-nav starts here  -->
+    <nav id="normal-nav">
+		<!-- normal-nav-wrapper starts here -->
+		<div class="normal-nav-wrapper">
+			<!-- nav-logo starts here -->
+			<div class="nav-logo">
+				<a href="../../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<!-- nav-logo  ends here -->
+			<!-- main-menu starts here -->
+			<!-- ul -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../../index.html"><span>Home</span></a></li>
+				<li><a href="../../Works/works.html"><span>Works</span></a></li>
+				<li><a href="../../About/about.html"><span>About</span></a></li>
+				<li><a href="../../Repository/repository.html"><span>The Repository</span></a>
+					<!-- sub-menu starts here -->
+					<ul class="sub-menu">
+						<!-- sub-menu direct children -->
+						<li><a href="../../Repository/Fact-Dump/fact-dump.html"><span>Fact Dump</span></a></li>
+						<li><a href="../../Repository/Creative-Dump/creative.html"><span>Creative Dump</span></a></li>
+						<li><a href="../../Repository/Writer-Journey/writer-journey.html"><span>Writer's Journey</span></a></li>
+					</ul>
+					<!-- sub-menu ends here -->
+				</li>
+			</ul>
+			<!-- main-menu ends here -->
+		</div>
+		<!-- normal-nav-wrapper ends here -->
+	</nav>
+	<!-- normal-nav ends here -->
+	<!-- mobile nav starts here (will only appear on certain screen sizes) -->
+	<nav id="mobile-nav">
+		<!-- mobile nav scripts -->
+		<script>
+			function myFunction() {
+				var z = document.getElementById("toggle-button");
+				var x = document.getElementById("menu-toggle");
+				if (x.style.visibility === "visible") {
+					x.style.visibility = "hidden";
+					x.style.transform = "translateX(200%)";
+					x.style.opacity = "0";
+					/* put background before button on click */
+					z.style.background = "transparent";
+				}
+				else {
+					x.style.visibility = "visible";
+					x.style.transform = "translateX(100%)";
+					x.style.opacity = "1";
+					/* put background before button on click */
+					z.style.background = "#2d2d2d";
+				}
+			}
+		</script>
+		<!-- mobile nav scripts ends here -->
+		<!-- nav-header starts here -->
+		<div class="nav-header">
+			<div class="logo-wrapper">
+				<a href="../../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<button id="toggle-button" onclick="myFunction()">
+				<i class="fa fa-bars fa-2x fa-inverse" aria-hidden="false"></i>
+			</button>
+		</div>
+		<!-- nav-header ends here -->
+		<!-- menu-toggle starts here -->
+		<!-- purpose: the thing that appears when toggle-button is clicked -->
+		<div id="menu-toggle">
+			<!-- main-menu starts here -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../Works/works.html">Works</a></li>
+				<li><a href="../../About/about.html">About</a></li>
+				<li><a href="../../Repository/repository.html">The Repository</a></li>
+				<!-- sub-menu starts here -->
+				<ul class="sub-menu">
+					<!-- sub-menu direct children -->
+					<li><a href="../../Repository/Fact-Dump/fact-dump.html">Facts Dump</a></li>
+					<li><a href="../../Repository/Creative-Dump/creative.html">Creative Dump</a></li>
+					<li><a href="../../Repository/Writer-Journey/writer-journey.html">Writer's Journey</a></li>
+				</ul>
+				<!-- sub-menu ends here -->
+			</ul>
+			<!-- main-menu ends here -->
+			<!-- footer-in-nav starts here -->
+			<footer class="footer-in-nav">
+				<div class="link-wrapper">
+					<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+				</div>
+			</footer>
+			<!-- footer-in-nav ends here -->
+		</div>
+		<!-- menu-toggle ends here -->
+	</nav>
+	<!-- mobile nav ends here -->
+	<!-- header.main-header can be used for other pages if needed -->
+	<header class="main-header">
+		<div class="text-container">
+            <h3>Did you know that...</h3>
+			<p>...Beethoven passed away on March 26, 1827 after a long illness? His friend compared the moment to the composer’s symphonies with “crashes that sound like hammering on the portals of Fate.” Nobody knows for certain about what Beethoven’s final words are, although his friends and biographers have recorded many different versions including “Pity, pity — too late,” or “Applaud, my friends, the comedy is over” and “I shall hear in heaven,” a reference to his deafness.
+            </p>
+			<cite>Source: Medium, "Five Facts You Probably Didn’t Know About Beethoven”</cite>
+		</div>
+	</header>
+	<!-- header.main-header ends here -->
+	<!-- 	Content-wrapper and content-container will be used for all other pages.
+			Purpose is to contain the main content. Content-wrapper makes sure content-
+			container does not overflow. Content-container is used to create a blackish
+			background for main content so that it will be readable against the colors
+			of the header.background's background image 
+	-->
+	<div class="content-wrapper">
+		<div class="content-container">
+			<main>
+				<!-- main-wrapper begins -->
+				<div class="main-wrapper">
+					<h2>What is the  <i>Writer's Journey?</i></h2>
+					<!-- main-text-wrapper begins -->
+					<div class="main-text-wrapper">
+						<p class="first-paragraph">
+                            Perhaps one of my greatest passion lies in writing. I love to imbue fantasy elements to any object I seem to take interest on, along with giving it an origin story. Though, as with most writers, my procrastination knows no bounds. I just can't seem to  wrap my head around trying to at least achieve what I really want to do, which is to finally start damn writing! As such, I have taken the initiative to at least keep track of my progress, and that is the purpose of the Writer's Journey.
+                        </p>
+					</div>
+					<!-- main-text-wrapper ends here -->
+                    <!-- story progress bar -->
+                    <div id="writing-progress">
+                        <!-- progress bar -->
+                        <h3 style="text-align: center;">Story Progress</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-value"></div>
+                            </div>
+                            <p>1%</p>
+                        </div>
+                    </div>
+                    <!-- story progress bar ends here -->
+                    <p style="text-align: center;">As can be observed, the story has not even been shaped yet. However, here are some snippets of some segments of my planned novel. Yes, I am indeed planning to make a novel for sure, although the only problem is how long I could even complete it. These snippets will only consist of vague concepts about my world, after all I have barely even started yet.</p>
+                    <!-- writer-gallery starts here -->
+                    <div id="writer-gallery">
+                        <div class="image-wrapper">
+                            <input type="checkbox" id="check1">
+                            <label for="check1" class="img1">
+                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                                <img src="Images/storydump_1.jpg" alt="story manuscript" loading="lazy">
+                            </label>
+                            <input type="checkbox" id="check2">
+                            <label for="check2" class="img2">
+                                <img src="Images/storydump_2.jpg" alt="story manuscript" loading="lazy">
+                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                            </label>
+                            <input type="checkbox" id="check3">
+                            <label for="check3" class="img3">
+                                <img src="Images/storydump_3.jpg" alt="story manuscript" loading="lazy">
+                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                            </label>
+                            <input type="checkbox" id="check4">
+                            <label for="check4" class="img4">
+                                <img src="Images/storydump_4.jpg" alt="story manuscript" loading="lazy">
+                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                            </label>
+                            <input type="checkbox" id="check5">
+                            <label for="check5" class="img5">
+                                <img src="Images/storydump_5.jpg" alt="story manuscript" loading="lazy">
+                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                            </label>
+                            <input type="checkbox" id="check6">
+                            <label for="check6" class="img6">
+                                <img src="Images/storydump_6.jpg" alt="story manuscript" loading="lazy">
+                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                            </label>
+                            <input type="checkbox" id="check7">
+                            <label for="check7" class="img7">
+                                <img src="Images/storydump_7.jpg" alt="story manuscript" loading="lazy">
+                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                            </label>
+                        </div>
+                    </div>
+                    <!--writer-gallery ends here -->
+				</div>
+				<!-- main-wrapper ends here -->
+			</main>
+		</div>
+	</div>
+	<!-- content.wrapper ends here -->
+	<!-- Footer will be used in all other pages. -->
+	<footer id="main-footer">
+		<div class="footer-wrapper">
+			<a href="https://mail.google.com/mail/u/1/?to=raileyalin@gmail.com&fs=1&tf=cm" target="_blank">
+				<p>raileyalin@gmail.com | 09605062152</p>
+			</a>
+			<div class="link-wrapper">
+				<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer ends here -->
+</html>

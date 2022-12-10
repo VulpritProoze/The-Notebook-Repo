@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- general styles (external) -->
+    <link rel="stylesheet" href="styles.css">
+	<!-- mobile nav external stylesheet -->
+	<link rel="stylesheet" href="mobile-nav.css">
+	<!-- font awesome icons external stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="Images/logo2.ico">
+    <title>The Notebook</title>
+	<style>
+		/* 	bg-image-index is exclusive for index only despite sharing the same header tag as .background */
+		.background {
+			background-image: url(Images/header-spacex-rocket.jpg);
+		}
+		.main-header {
+			padding: 25rem 20rem;
+		}
+			.main-header .text-container {
+				display: flex;
+				flex-flow: column wrap;
+				justify-content: center;
+				align-items:  center;
+				color: var(--light-color);
+			}
+			.main-header .text-container h1,
+			.main-header .text-container p {
+				text-align: center;
+			}
+		/*	media query for index html main-header  */
+		@media only screen and (max-width: 1100px){
+			.main-header {
+				padding: 20rem 10rem;
+			}
+		}
+		@media only screen and (max-width: 750px){
+			.main-header {
+				padding: 20rem 5rem;
+			}
+		}
+
+		/*	main for index style rules */
+		main .main-texts-quote {
+			width: 100%;
+		}
+			main .main-texts-quote-wrapper {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				row-gap: 10rem;
+				justify-content: center;
+			}
+			/*	quote-row (direct child of main-texts-quote) */
+			main .main-texts-quote .quote-row {
+				display: flex;
+				flex-direction: row;
+				column-gap: 2rem;
+				align-items: center;
+				justify-content: space-between;	
+			}
+					/* media queries to make blockquotes still look cool when screen is resized */
+					/* media query for making blockquotes display in column */
+					/*  blockquotes in odd numbers are displayed in reverse so that all blockquotes images
+						are above the blockquotes */
+					@media only screen and (max-width: 1000px){
+						main .main-texts-quote .quote-row {
+							flex-direction: column;
+						}
+						main .main-texts-quote .quote-row:nth-child(odd) {
+							flex-direction: column-reverse !important;
+						}
+						main .main-texts-quote img {
+							width: 50% !important;
+						}
+					}
+					/* same media to resize image width when screen size is less than 400px */
+					@media only screen and (max-width: 400px){
+						main .main-texts-quote img {
+							width: 75% !important;
+						}
+					}
+		/*	style rules for blockquote images */
+		main .main-texts-quote img {
+			width: 25%;
+			object-fit: cover;
+		}
+			/*	general blockquote styles */
+			main .main-texts-quote blockquote {
+				text-align: center;
+			}
+				/*	opening quote mark */
+				main .main-texts-quote blockquote:before {
+					content: '\201e' /* entity 201e is „*/
+				}
+				/*	closing quote mark */
+				main .main-texts-quote blockquote:after {
+					content: '\201c'; /* entity 201c is “ */
+				}
+				main .main-texts-quote blockquote:before, 
+				main .main-texts-quote blockquote:after {
+					font-family: Calibri;
+					color: #4d555a;
+					font-size: 2em;
+				}
+					/* odd are rows at odd intervals (1,3,..) to show the border thingy to left */
+					main .main-texts-quote blockquote:nth-child(odd) {
+						border-left: 0.2vw solid #4d555a;
+						padding-left: 1vw;
+					}   
+					/* even are rows at even intervals (0,2,4,...) to show the border thingy to right */
+					main .main-texts-quote blockquote:nth-child(even) {
+						border-right: 0.2vw solid #4d555a;
+						padding-right: 1vw;
+					}   
+						main .main-texts-quote blockquote cite {
+							font-size: 65%; 
+							top:50%
+						}
+			/* em-dash */
+			main .main-texts-quote blockquote cite:before {content: '\2015'} /* css entity 2015 is horizontal bar ― (somehow, it is actually
+																				is different from em dash and en dash) */
+			/*	end-quote style rules */
+			main .end-quote {
+				position: relative;
+				margin-top: 10rem;
+				text-align: center;
+			}
+	</style>
+</head>
+<body>
+	<!-- header.background will be used for all other pages -->
+    <header class="background"></header>
+    <!-- header.background ends here -->
+	<!-- normal-nav starts here  -->
+    <nav id="normal-nav">
+		<!-- normal-nav-wrapper starts here -->
+		<div class="normal-nav-wrapper">
+			<!-- nav-logo starts here -->
+			<div class="nav-logo">
+				<a href="index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<!-- nav-logo  ends here -->
+			<!-- main-menu starts here -->
+			<!-- ul -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="index.html"><span>Home</span></a></li>
+				<li><a href="Works/works.html"><span>Works</span></a></li>
+				<li><a href="About/about.html"><span>About</span></a></li>
+				<li><a href="Repository/repository.html"><span>The Repository</span></a>
+					<!-- sub-menu starts here -->
+					<ul class="sub-menu">
+						<!-- sub-menu direct children -->
+						<li><a href="Repository/Fact-Dump/fact-dump.html"><span>Fact Dump</span></a></li>
+						<li><a href="Repository/Creative-Dump/creative.html"><span>Creative Dump</span></a></li>
+						<li><a href="Repository/Writer-Journey/writer-journey.html"><span>Writer's Journey</span></a></li>
+					</ul>
+					<!-- sub-menu ends here -->
+				</li>
+			</ul>
+			<!-- main-menu ends here -->
+		</div>
+		<!-- normal-nav-wrapper ends here -->
+	</nav>
+	<!-- normal-nav ends here -->
+	<!-- mobile nav starts here (will only appear on certain screen sizes) -->
+	<nav id="mobile-nav">
+		<!-- mobile nav scripts -->
+		<script>
+			function myFunction() {
+				var z = document.getElementById("toggle-button");
+				var x = document.getElementById("menu-toggle");
+				if (x.style.visibility === "visible") {
+					x.style.visibility = "hidden";
+					x.style.transform = "translateX(200%)";
+					x.style.opacity = "0";
+					/* put background before button on click */
+					z.style.background = "transparent";
+				}
+				else {
+					x.style.visibility = "visible";
+					x.style.transform = "translateX(100%)";
+					x.style.opacity = "1";
+					/* put background before button on click */
+					z.style.background = "#2d2d2d";
+				}
+			}
+		</script>
+		<!-- mobile nav scripts ends here -->
+		<!-- nav-header starts here -->
+		<div class="nav-header">
+			<div class="logo-wrapper">
+				<a href="index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<button id="toggle-button" onclick="myFunction()">
+				<i class="fa fa-bars fa-2x fa-inverse" aria-hidden="false"></i>
+			</button>
+		</div>
+		<!-- nav-header ends here -->
+		<!-- menu-toggle starts here -->
+		<!-- purpose: the thing that appears when toggle-button is clicked -->
+		<div id="menu-toggle">
+			<!-- main-menu starts here -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Works/works.html">Works</a></li>
+				<li><a href="About/about.html">About</a></li>
+				<li><a href="Repository/repository.html">The Repository</a></li>
+				<!-- sub-menu starts here -->
+				<ul class="sub-menu">
+					<!-- sub-menu direct children -->
+					<li><a href="Repository/Fact-Dump/fact-dump.html">Facts Dump</a></li>
+					<li><a href="Repository/Creative-Dump/creative.html">Creative Dump</a></li>
+					<li><a href="Repository/Writer-Journey/writer-journey.html">Writer's Journey</a></li>
+				</ul>
+				<!-- sub-menu ends here -->
+			</ul>
+			<!-- main-menu ends here -->
+			<!-- footer-in-nav starts here -->
+			<footer class="footer-in-nav">
+				<div class="link-wrapper">
+					<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+				</div>
+			</footer>
+			<!-- footer-in-nav ends here -->
+		</div>
+		<!-- menu-toggle ends here -->
+	</nav>
+	<!-- mobile nav ends here -->
+	<!-- header.main-header can be used for other pages if needed -->
+	<header class="main-header">
+		<div class="text-container">
+			<h1>Welcome to the Notebook</h1>
+			<p>A creative safe space.</p>
+		</div>
+	</header>
+	<!-- header.main-header ends here -->
+	<!-- 	Content-wrapper and content-container will be used for all other pages.
+			Purpose is to contain the main content. Content-wrapper makes sure content-
+			container does not overflow. Content-container is used to create a blackish
+			background for main content so that it will be readable against the colors
+			of the header.background's background image 
+	-->
+	<!-- content-wrapper starts here -->
+	<div class="content-wrapper">
+		<div class="content-container">
+			<main>
+				<!-- main-wrapper starts here -->
+				<div class="main-wrapper">
+					<div class="main-text">
+						<!-- main-texts-quote starts here -->
+						<div class="main-texts-quote">
+							<!-- main-texts-quote-wrapper starts here -->
+							<div class="main-texts-quote-wrapper">
+								<div class="first-row quote-row">
+									<blockquote>
+										To live is to suffer. To survive is to find some meaning in that suffering.
+										<cite>Friedrich Nietzsche</cite>
+									</blockquote>
+									<img src="Images/nietzsche.jpg" alt="friedrich nietzsche">
+								</div>
+								<div class="second-row quote-row">
+									<img src="Images/albert-einstein2-min.png" alt="albert einstein">
+									<blockquote>
+										Imagination is more important than knowledge.
+										<cite>Albert Einstein</cite>
+									</blockquote>
+								</div>
+								<div class="third-row quote-row">
+									<blockquote>
+										I am not what happened to me, I am what I choose to become.
+										<cite>Carl Gustav Jung</cite>
+									</blockquote>
+									<img src="Images/carl-jung.jpg" alt="carl jung">
+								</div>
+								<div class="fourth-row quote-row">
+									<img src="Images/carl-sagan.png" alt="albert einstein">
+									<blockquote>
+										Science is an enterprise of human beings, so there are all sorts of jealousies and rivalries and unwillingness to admit mistakes, but the great advantage is that the culture of science is opposed to these frailties, and the collective enterprise of science undoes them. We give our highest rewards to those who disprove the contentions  of our most revered figures.
+										<cite>Carl Sagan</cite>
+									</blockquote>
+								</div>
+							</div>
+							<!-- main-texts-quote-wrapper ends here -->
+						</div>
+						<!-- main-texts-quote ends here -->
+						<!-- end-quote starts here -->
+						<div class="end-quote">
+							<cite style="letter-spacing: 10px;">ad aspera ad astra</cite>
+							<blockquote><i>“through hardships to the stars”</i></blockquote>
+						</div>
+						<!-- end-quote ends here -->
+					</div>
+				</div>
+				<!-- main-wrapper ends here -->
+			</main>
+		</div>
+	</div>
+	<!-- content.wrapper ends here -->
+	<!-- Footer will be used in all other pages. -->
+	<footer id="main-footer">
+		<div class="footer-wrapper">
+			<a href="https://mail.google.com/mail/u/1/?to=raileyalin@gmail.com&fs=1&tf=cm" target="_blank">
+				<p>raileyalin@gmail.com | 09605062152</p>
+			</a>
+			<div class="link-wrapper">
+				<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer ends here -->
+</body>
+</html>

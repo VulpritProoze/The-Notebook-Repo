@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- general styles (external) -->
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<!-- mobile nav external stylesheet -->
+	<link rel="stylesheet" href="../mobile-nav.css">
+	<!-- common header external stylesheet -->
+	<link rel="stylesheet" href="../common-header.css">
+	<!-- font awesome icons external stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="../Images/logo2.ico">
+	<title>About - Notebook</title>
+	<style>
+		/* url for background img */
+		.background {
+			background-image: url(../Images/cosmic-cliffs.png);
+		}
+		/* style rules for the texts in main */
+		main .main-wrapper {
+			overflow: auto;
+			display: flex;
+			flex-direction: row;
+			gap: 2.5rem;
+		}
+			main .main-text-wrapper p {
+				text-indent: 40px;
+			}
+			main .main-text-wrapper blockquote {
+				margin-top: 5rem;
+				display: flex;
+				justify-content: center;
+			}
+			/* style rule for main image */
+			main .image-wrapper img {
+				margin-top: 40%;
+				width: 20rem;
+				border-radius: 0 50px;
+			}
+			/* main h2 style rule */
+			main > h2 {
+				text-align: center;
+				margin-bottom: 5rem;
+			}
+		/*	media query for main texts */
+		@media only screen and (max-width: 950px){
+			main .main-wrapper {
+				flex-direction: column;
+			}
+			main .main-wrapper .image-wrapper {
+				display: flex;
+				justify-content: center;
+			}
+			main .main-wrapper .image-wrapper img {
+				margin-top: 0%;
+			}
+		}
+		@media only screen and (max-width: 450px){
+			main .main-wrapper .image-wrapper img {
+				width: 15rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- header.background will be used for all other pages -->
+    <header class="background"></header>
+    <!-- header.background ends here -->
+    <!-- normal-nav starts here  -->
+    <nav id="normal-nav">
+		<!-- normal-nav-wrapper starts here -->
+		<div class="normal-nav-wrapper">
+			<!-- nav-logo starts here -->
+			<div class="nav-logo">
+				<a href="../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<!-- nav-logo  ends here -->
+			<!-- main-menu starts here -->
+			<!-- ul -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../index.html"><span>Home</span></a></li>
+				<li><a href="../Works/works.html"><span>Works</span></a></li>
+				<li><a href="../About/about.html"><span>About</span></a></li>
+				<li><a href="../Repository/repository.html"><span>The Repository</span></a>
+					<!-- sub-menu starts here -->
+					<ul class="sub-menu">
+						<!-- sub-menu direct children -->
+						<li><a href="../Repository/Fact-Dump/fact-dump.html"><span>Fact Dump</span></a></li>
+						<li><a href="../Repository/Creative-Dump/creative.html"><span>Creative Dump</span></a></li>
+						<li><a href="../Repository/Writer-Journey/writer-journey.html"><span>Writer's Journey</span></a></li>
+					</ul>
+					<!-- sub-menu ends here -->
+				</li>
+			</ul>
+			<!-- main-menu ends here -->
+		</div>
+		<!-- normal-nav-wrapper ends here -->
+	</nav>
+	<!-- normal-nav ends here -->
+	<!-- mobile nav starts here (will only appear on certain screen sizes) -->
+	<nav id="mobile-nav">
+		<!-- mobile nav scripts -->
+		<script>
+			function myFunction() {
+				var z = document.getElementById("toggle-button");
+				var x = document.getElementById("menu-toggle");
+				if (x.style.visibility === "visible") {
+					x.style.visibility = "hidden";
+					x.style.transform = "translateX(200%)";
+					x.style.opacity = "0";
+					/* put background before button on click */
+					z.style.background = "transparent";
+				}
+				else {
+					x.style.visibility = "visible";
+					x.style.transform = "translateX(100%)";
+					x.style.opacity = "1";
+					/* put background before button on click */
+					z.style.background = "#2d2d2d";
+				}
+			}
+		</script>
+		<!-- mobile nav scripts ends here -->
+		<!-- nav-header starts here -->
+		<div class="nav-header">
+			<div class="logo-wrapper">
+				<a href="../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<button id="toggle-button" onclick="myFunction()">
+				<i class="fa fa-bars fa-2x fa-inverse" aria-hidden="false"></i>
+			</button>
+		</div>
+		<!-- nav-header ends here -->
+		<!-- menu-toggle starts here -->
+		<!-- purpose: the thing that appears when toggle-button is clicked -->
+		<div id="menu-toggle">
+			<!-- main-menu starts here -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../Works/works.html">Works</a></li>
+				<li><a href="../About/about.html">About</a></li>
+				<li><a href="../Repository/repository.html">The Repository</a></li>
+				<!-- sub-menu starts here -->
+				<ul class="sub-menu">
+					<!-- sub-menu direct children -->
+					<li><a href="../Repository/Fact-Dump/fact-dump.html">Facts Dump</a></li>
+					<li><a href="../Repository/Creative-Dump/creative.html">Creative Dump</a></li>
+					<li><a href="../Repository/Writer-Journey/writer-journey.html">Writer's Journey</a></li>
+				</ul>
+				<!-- sub-menu ends here -->
+			</ul>
+			<!-- main-menu ends here -->
+			<!-- footer-in-nav starts here -->
+			<footer class="footer-in-nav">
+				<div class="link-wrapper">
+					<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+				</div>
+			</footer>
+			<!-- footer-in-nav ends here -->
+		</div>
+		<!-- menu-toggle ends here -->
+	</nav>
+	<!-- mobile nav ends here -->
+	<!-- header.main-header can be used for other pages if needed -->
+	<header class="main-header">
+		<div class="text-container">
+			<p>This landscape of “mountains” and “valleys” speckled with glittering stars is actually the edge of a nearby, young, star-forming region called NGC 3324 in the Carina Nebula. Captured in infrared light by NASA’s new James Webb Space Telescope, this image reveals for the first time previously invisible areas of star birth.</p>
+			<cite>Source: National Aeronautics and Space Administration</cite>
+		</div>
+	</header>
+	<!-- header.main-header ends here -->
+	<!-- 	Content-wrapper and content-container will be used for all other pages.
+			Purpose is to contain the main content. Content-wrapper makes sure content-
+			container does not overflow. Content-container is used to create a blackish
+			background for main content so that it will be readable against the colors
+			of the header.background's background image 
+	-->
+	<div class="content-wrapper">
+		<div class="content-container">
+			<main>
+				<h2>About the Author...</h2>
+				<!-- main-wrapper begins -->
+				<div class="main-wrapper">
+					<div class="image-wrapper">
+						<img src="../Images/image1.jpg" alt="author page my picture">
+					</div>
+					<!-- main-text-wrapper begins -->
+					<div class="main-text-wrapper">
+						<p class="first-paragraph">
+							<strong>Ram Railey B. Alin</strong>, 19 years of age, is a University of Cebu student, currently studying Bachelor of Science in Information Technology as a 1st year. He completed his Junior High School and Senior High School at <i>Tisa National High School</i>. Currently, he resides in Barangay Tisa, known for its delicacy of <strong>siomai</strong>. He likes to read wuxia, xianxia, and manga. He occasionally frequents YouTube and Facebook as a way to relax his spirit whenever times are tough. He also claims to be an avid fan of knowledge, and is a huge science lover. As such, he also adore reading articles of such nature.
+						</p>
+						<p class="second-paragraph">
+							To him, the universe is like a sandbox, where in we are one of its few gifted sculptors. As such, he is fascinated by all the things that seems to explain its intricacies. When he was a child, access to the internet remained close which gave him the lucky opportunity to be digitally literate at a young age. Despite that, he believes that that event wasn't what made him to who he is currently. He believes that his neverending curiosity for the unknown is what has always been ingrained in him since he was born. As such, he otherwise claims to be <i>sensory weak</i> or inherently fragile when it comes to interacting with the real world. He believes that the world of sensory experience only makes up a fraction of what makes a human, human. He thinks that the wonderful world of ideas must be explored as well and attempt to imagine theories that could be helpful for mankind. Friedrich Nietzsche, one of his favorite philosophers once said that:
+						</p>
+						<blockquote>
+							“No one can construct for you the bridge upon which precisely you must cross the stream of life,  no one but you yourself alone.”
+						</blockquote>
+					</div>
+					<!-- main-text-wrapper ends here -->
+				</div>
+				<!-- main-wrapper ends here -->
+			</main>
+		</div>
+	</div>
+	<!-- content.wrapper ends here -->
+	<!-- Footer will be used in all other pages. -->
+	<footer id="main-footer">
+		<div class="footer-wrapper">
+			<a href="https://mail.google.com/mail/u/1/?to=raileyalin@gmail.com&fs=1&tf=cm" target="_blank">
+				<p>raileyalin@gmail.com | 09605062152</p>
+			</a>
+			<div class="link-wrapper">
+				<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer ends here -->
+</body>
+</html>

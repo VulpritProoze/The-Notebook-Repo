@@ -1,0 +1,46 @@
+/* 	style the header's height here */
+header.main-header {
+    padding: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color); 
+}
+    header.main-header .text-container {
+        text-indent: 20px;
+        text-align: justify;
+        line-height: 150%;
+        padding: .7rem;
+        transition: background .4s ease;
+        color: var(--light-color);
+    }
+    header.main-header .text-container:hover {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+    }
+    /* I use blockquote and sometimes p */
+    header.main-header .text-container blockquote,
+    header.main-header .text-container p {
+        margin: 5px 3px;
+    }
+    header.main-header .text-container cite {
+        font-size: 90%;
+        color: darkgray;
+    }
+
+/*  media query for responsive header texts */
+@media only screen and (max-width: 1100px){
+    header.main-header {
+        padding: 15rem 12rem !important;
+    }
+}
+@media only screen and (max-width: 700px){
+    header.main-header {
+        padding: 15rem 5rem !important;
+    }
+}
+@media only screen and (max-width: 450px){
+    header.main-header {
+        padding: 15rem 2rem !important;
+    }
+}

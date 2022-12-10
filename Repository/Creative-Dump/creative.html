@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- general styles (external) -->
+	<link rel="stylesheet" type="text/css" href="../../styles.css">
+	<!-- mobile nav external stylesheet -->
+	<link rel="stylesheet" href="../../mobile-nav.css">
+	<!-- common header external stylesheet -->
+	<link rel="stylesheet" href="../../common-header.css">
+	<!-- font awesome icons external stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="../../Images/logo2.ico">
+	<title>Creative Dump - Notebook</title>
+	<style>
+		/* url for background img */
+		.background {
+			background-image: url(Images/van_gogh_starry_night.jpg);
+            transform: scale(1.012);
+		}
+
+		/* main style rules for creative html */
+		main h2,
+		main .main-text-wrapper p {
+			text-align: center;
+		}
+			main .main-text-wrapper p {
+				text-indent: 40px;
+			}
+		/* for main gallery */
+		#creative-gallery {
+			width: 100%;
+		}
+		#creative-gallery .row {
+			display: flex;
+			flex-wrap: wrap;
+			/*	center the gallery to middle */
+			justify-content: center;
+		}
+
+		/* Create four equal columns that sits next to each other */
+		#creative-gallery .column {
+			flex: 25%;
+			max-width: 25%;
+			padding: 0 .3vw;
+			display: flex;
+			flex-direction: column;
+		}
+
+		#creative-gallery .column img {
+			margin-bottom: .6vw;
+			vertical-align: middle;
+			width: 100%;
+			border-radius: 2px;
+			filter: contrast(.89);
+		}
+
+		/* Responsive layout - makes a two column-layout instead of four columns */
+		@media screen and (max-width: 1000px) {
+			#creative-gallery .column {
+				flex: 50%;
+				max-width: 50%;
+			}
+			/* fix 1st column's problem with hole in middle between column 1 and 3. */
+			#creative-gallery .column:nth-child(1) {
+				justify-content: flex-end;
+			}
+			
+		}
+
+		/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+		@media screen and (max-width: 700px) {
+			#creative-gallery .column {
+				flex: 100%;
+				max-width: 100%;
+			}
+			/* enlarge gap between images in 1 column layout */
+			#creative-gallery .column img {
+				margin-bottom: 2rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- header.background will be used for all other pages -->
+    <header class="background"></header>
+    <!-- header.background ends here -->
+    <!-- normal-nav starts here  -->
+    <nav id="normal-nav">
+		<!-- normal-nav-wrapper starts here -->
+		<div class="normal-nav-wrapper">
+			<!-- nav-logo starts here -->
+			<div class="nav-logo">
+				<a href="../../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<!-- nav-logo  ends here -->
+			<!-- main-menu starts here -->
+			<!-- ul -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../../index.html"><span>Home</span></a></li>
+				<li><a href="../../Works/works.html"><span>Works</span></a></li>
+				<li><a href="../../About/about.html"><span>About</span></a></li>
+				<li><a href="../../Repository/repository.html"><span>The Repository</span></a>
+					<!-- sub-menu starts here -->
+					<ul class="sub-menu">
+						<!-- sub-menu direct children -->
+						<li><a href="../../Repository/Fact-Dump/fact-dump.html"><span>Fact Dump</span></a></li>
+						<li><a href="../../Repository/Creative-Dump/creative.html"><span>Creative Dump</span></a></li>
+						<li><a href="../../Repository/Writer-Journey/writer-journey.html"><span>Writer's Journey</span></a></li>
+					</ul>
+					<!-- sub-menu ends here -->
+				</li>
+			</ul>
+			<!-- main-menu ends here -->
+		</div>
+		<!-- normal-nav-wrapper ends here -->
+	</nav>
+	<!-- normal-nav ends here -->
+	<!-- mobile nav starts here (will only appear on certain screen sizes) -->
+	<nav id="mobile-nav">
+		<!-- mobile nav scripts -->
+		<script>
+			function myFunction() {
+				var z = document.getElementById("toggle-button");
+				var x = document.getElementById("menu-toggle");
+				if (x.style.visibility === "visible") {
+					x.style.visibility = "hidden";
+					x.style.transform = "translateX(200%)";
+					x.style.opacity = "0";
+					/* put background before button on click */
+					z.style.background = "transparent";
+				}
+				else {
+					x.style.visibility = "visible";
+					x.style.transform = "translateX(100%)";
+					x.style.opacity = "1";
+					/* put background before button on click */
+					z.style.background = "#2d2d2d";
+				}
+			}
+		</script>
+		<!-- mobile nav scripts ends here -->
+		<!-- nav-header starts here -->
+		<div class="nav-header">
+			<div class="logo-wrapper">
+				<a href="../../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<button id="toggle-button" onclick="myFunction()">
+				<i class="fa fa-bars fa-2x fa-inverse" aria-hidden="false"></i>
+			</button>
+		</div>
+		<!-- nav-header ends here -->
+		<!-- menu-toggle starts here -->
+		<!-- purpose: the thing that appears when toggle-button is clicked -->
+		<div id="menu-toggle">
+			<!-- main-menu starts here -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../Works/works.html">Works</a></li>
+				<li><a href="../../About/about.html">About</a></li>
+				<li><a href="../../Repository/repository.html">The Repository</a></li>
+				<!-- sub-menu starts here -->
+				<ul class="sub-menu">
+					<!-- sub-menu direct children -->
+					<li><a href="../../Repository/Fact-Dump/fact-dump.html">Facts Dump</a></li>
+					<li><a href="../../Repository/Creative-Dump/creative.html">Creative Dump</a></li>
+					<li><a href="../../Repository/Writer-Journey/writer-journey.html">Writer's Journey</a></li>
+				</ul>
+				<!-- sub-menu ends here -->
+			</ul>
+			<!-- main-menu ends here -->
+			<!-- footer-in-nav starts here -->
+			<footer class="footer-in-nav">
+				<div class="link-wrapper">
+					<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+				</div>
+			</footer>
+			<!-- footer-in-nav ends here -->
+		</div>
+		<!-- menu-toggle ends here -->
+	</nav>
+	<!-- mobile nav ends here -->
+	<!-- header.main-header can be used for other pages if needed -->
+	<header class="main-header">
+		<div class="text-container">
+			<p>
+                Mention Vincent van Gogh, and one of the first things likely to come to many people’s minds is the fact that he cut off his own ear. This stark act, committed in 1888, marked the beginning of the depression that would plague him until the end of his life. But to know van Gogh is to get past the caricature of the tortured, misunderstood artist and to become acquainted instead with the hardworking, deeply religious, and difficult man. Van Gogh found his place in art and produced emotional, visually arresting paintings over the course of a career that lasted only a decade.
+            </p>
+			<cite>Source: MoMa Learning, "Vincent van Gogh: Emotion, Vision, and A Singular Style”</cite>
+		</div>
+	</header>
+	<!-- header.main-header ends here -->
+	<!-- 	Content-wrapper and content-container will be used for all other pages.
+			Purpose is to contain the main content. Content-wrapper makes sure content-
+			container does not overflow. Content-container is used to create a blackish
+			background for main content so that it will be readable against the colors
+			of the header.background's background image 
+	-->
+	<div class="content-wrapper">
+		<div class="content-container">
+			<main>
+				<!-- main-wrapper begins -->
+				<div class="main-wrapper">
+					<h2>The Creative Dump</h2>
+					<!-- main-text-wrapper begins -->
+					<div class="main-text-wrapper">
+						<p class="first-paragraph">
+                            Despite my terrible sketching skills, I feel like I need to display out there some of my dumb drawings. *laughs*
+                        </p>
+						<p>
+							Because of how lazy I am, all my sketches are done on plain paper and sometimes intermediate and yellow pad paper. I have also long been terrible at colors, which is why I thought maybe sketching was my calling (just kidding, it was just some of the few excuses I make because of my incompetence. *laughs*) Coupled with a ballpoint pen of ridiculous quality, I present to you my terrible gallery of warped art.
+						</p>
+					</div>
+					<!-- main-text-wrapper ends here -->
+					<!-- creative dump gallery starts here -->
+					<div id="creative-gallery">
+						<!-- image-wrapper starts here -->
+						<div class="image-wrapper">
+							<div class="row">
+								<div class="column">
+									<img src="Images/sketch_gyro_zeppeli.jpg" alt="gyro zeppeli" loading="lazy">
+									<img src="Images/sketch_rohan_kishibe.jpg" alt="rohan kishibe" loading="lazy"> 
+									<img src="Images/sketch_komi.jpg" alt="Komi-san" loading="lazy">
+								</div>
+								<div class="column">
+									<img src="Images/sketch_musashi.jpg" alt="musashi miyamoto" loading="lazy">
+									<img src="Images/sketch_out_of_control.jpg" alt="my sketch titled out of control" loading="lazy">
+									<img src="Images/sketch_reaper.jpg" alt="my sketch of a reaper" loading="lazy">
+								</div>
+								<div class="column">
+									<img src="Images/sketch_reze.jpg" alt="reze chainsawman" loading="lazy">
+
+									<img src="Images/sketch_gyro2.jpg" alt="gyro staring at horizon" loading="lazy">
+								</div>
+								<div class="column">
+									<img src="Images/sketch_takamine.jpg" alt="takane takamine" loading="lazy">
+									<img src="Images/sketch_tanya.jpg" alt="tanya degurechaff" loading="lazy">
+								</div>
+							</div>
+						</div>
+						<!-- image-wrapper ends here -->
+					</div>
+					<!-- creative dump gallery ends here -->
+				</div>
+				<!-- main-wrapper ends here -->
+			</main>
+		</div>
+	</div>
+	<!-- content.wrapper ends here -->
+	<!-- Footer will be used in all other pages. -->
+	<footer id="main-footer">
+		<div class="footer-wrapper">
+			<a href="https://mail.google.com/mail/u/1/?to=raileyalin@gmail.com&fs=1&tf=cm" target="_blank">
+				<p>raileyalin@gmail.com | 09605062152</p>
+			</a>
+			<div class="link-wrapper">
+				<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer ends here -->
+</html>

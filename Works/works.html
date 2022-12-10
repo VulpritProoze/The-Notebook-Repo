@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- general styles (external) -->
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<!-- mobile nav external stylesheet -->
+	<link rel="stylesheet" href="../mobile-nav.css">
+	<!-- stylesheet for background animation -->
+	<!-- the reason for separating it to an external stylesheet is because the css is too long and also it is something that
+		I will not likely touch anymore in the future -->
+	<link rel="stylesheet" type="text/css" href="../Works/works-animation.css">
+	<!-- font awesome icons external stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="../Images/logo2.ico">
+	<title>Works - Notebook</title>
+	<style>
+		/* url for background img */
+		.bg-animation-works {
+			background: var(--misc-color);
+		}
+		/* 	for header texts */
+		/* 	.text-wrapper style rule for main-header box model */
+		/*	header-wrapper purpose: to contain all the header elements. the works html is different because i placed my completed works on the header instead of main. why? i just felt like it. */
+		.main-header .header-wrapper {
+			padding: 10rem;
+			width: 100%;
+			min-height: 200vh;
+			flex-flow: column wrap;
+			color: var(--light-color);
+			display: flex;
+			justify-content: center;
+			position: relative;
+			align-items: center;
+			row-gap: 5rem;
+		}
+			/*	in case I'll have to add more portfolios to showcase, i set nth-child to odds and evens (since my layout is have an alternating bigger image at first column, smaller text second [in first row] and vice versa [to other rows]... whatever that means) */
+			/*	header-row-wrapper purpose: the works html header has items which ill just call a row. each row contains the portfolio image and some description. header-row-wrapper is a wrapper of each row or item or portfolio or whatver */
+				.main-header .header-wrapper .header-row-wrapper:nth-child(even) {
+					display: flex;
+					flex-flow: row wrap;
+					gap: 5rem;
+					width: 100%;
+					height: 50%;
+				}
+				.main-header .header-wrapper .header-row-wrapper:nth-child(odd) {
+					display: flex;
+					flex-flow: row wrap;
+					gap: 5rem;
+					width: 100%;
+					height: 50%;
+				}
+
+			/*	style rules for main-header image wrapper */
+			.main-header .header-wrapper .image-wrapper {
+				position: relative;
+				overflow: hidden;
+				border-radius: .8rem;
+				flex: .58;
+			}
+				/*	image within the wrapper */
+				.main-header .header-wrapper .header-row-wrapper img {
+					width: 100%;
+					height: 100%;
+					border-radius: 1rem;
+				}
+			/*	style rules for the description texts */
+			.main-header .header-wrapper .image-wrapper-text {
+				padding: 1rem;
+				display: flex;
+				flex-direction: column;
+				row-gap: 2rem;
+				text-align: center;
+				justify-content: center;
+				line-height: 200%;
+				flex: .42;
+			}
+				.main-header .header-wrapper .image-wrapper-text p {
+					text-indent: 2rem;
+				}
+				.main-header .header-wrapper .image-wrapper-text address > a {
+					color: var(--second-color);
+				}
+
+			/*	image hover transition */
+			.main-header .header-wrapper .header-row-wrapper .image-hover-effect {
+				transition: transform .3s ease;
+			}
+				.main-header .header-wrapper .header-row-wrapper .image-hover-effect:hover {
+					transform: scale(1.2);
+				}
+					/*	media query for adjusting header row wrapper when screen size reaches < 1100px */
+					@media only screen and (max-width: 1100px){
+						.main-header .header-wrapper .header-row-wrapper {
+							flex-direction: column !important;
+						}
+						/* make odd intervals column-reverse. this is to ensure all images go above the texts */
+						.main-header .header-row-wrapper:nth-child(even) {
+							flex-direction: column-reverse !important;
+						}
+					}
+					/*	media query for changing padding on header wrapper */
+					@media only screen and (max-width: 750px){
+						.main-header .header-wrapper {
+							padding: 10rem 4rem;
+						}
+					}
+					@media only screen and (max-width: 500px){
+						.main-header .header-wrapper {
+							padding: 10rem 2rem;
+						}
+					}
+
+		/*	for works html main tag style rules */
+			main .main-wrapper {
+				text-align: center;
+			}
+				main .image-wrapper {
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: center;
+					align-items: center;
+				}
+					main .image-wrapper .column {
+						width: 25rem;
+						padding: 0 4px;
+					}
+					main .image-wrapper img {
+						width: 100%;
+						border-radius: 4px;
+						filter: grayscale(1) blur(2px);
+					}
+			/*	gray out all other images when one image is hovered */
+			main .image-wrapper img:hover {
+				filter: grayscale(0);
+			}
+		/*	media query for the images */
+		@media only screen and (max-width: 550px){
+			main .image-wrapper .column {
+				width: 20rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- header.background will be used for all other pages -->
+	<!-- class bg-animation-works is exclusive for works.html only -->
+    <header class="background bg-animation-works">
+    	<div class="area" >
+            <ul class="circles">
+            	<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+   		</div>
+    </header>
+    <!-- header.background ends here -->
+    <!-- normal-nav starts here  -->
+    <nav id="normal-nav">
+		<!-- normal-nav-wrapper starts here -->
+		<div class="normal-nav-wrapper">
+			<!-- nav-logo starts here -->
+			<div class="nav-logo">
+				<a href="../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<!-- nav-logo  ends here -->
+			<!-- main-menu starts here -->
+			<!-- ul -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../index.html"><span>Home</span></a></li>
+				<li><a href="../Works/works.html"><span>Works</span></a></li>
+				<li><a href="../About/about.html"><span>About</span></a></li>
+				<li><a href="../Repository/repository.html"><span>The Repository</span></a>
+					<!-- sub-menu starts here -->
+					<ul class="sub-menu">
+						<!-- sub-menu direct children -->
+						<li><a href="../Repository/Fact-Dump/fact-dump.html"><span>Fact Dump</span></a></li>
+						<li><a href="../Repository/Creative-Dump/creative.html"><span>Creative Dump</span></a></li>
+						<li><a href="../Repository/Writer-Journey/writer-journey.html"><span>Writer's Journey</span></a></li>
+					</ul>
+					<!-- sub-menu ends here -->
+				</li>
+			</ul>
+			<!-- main-menu ends here -->
+		</div>
+		<!-- normal-nav-wrapper ends here -->
+	</nav>
+	<!-- normal-nav ends here -->
+	<!-- mobile nav starts here (will only appear on certain screen sizes) -->
+	<nav id="mobile-nav">
+		<!-- mobile nav scripts -->
+		<script>
+			function myFunction() {
+				var z = document.getElementById("toggle-button");
+				var x = document.getElementById("menu-toggle");
+				if (x.style.visibility === "visible") {
+					x.style.visibility = "hidden";
+					x.style.transform = "translateX(200%)";
+					x.style.opacity = "0";
+					/* put background before button on click */
+					z.style.background = "transparent";
+				}
+				else {
+					x.style.visibility = "visible";
+					x.style.transform = "translateX(100%)";
+					x.style.opacity = "1";
+					/* put background before button on click */
+					z.style.background = "#2d2d2d";
+				}
+			}
+		</script>
+		<!-- mobile nav scripts ends here -->
+		<!-- nav-header starts here -->
+		<div class="nav-header">
+			<div class="logo-wrapper">
+				<a href="../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<button id="toggle-button" onclick="myFunction()">
+				<i class="fa fa-bars fa-2x fa-inverse" aria-hidden="false"></i>
+			</button>
+		</div>
+		<!-- nav-header ends here -->
+		<!-- menu-toggle starts here -->
+		<!-- purpose: the thing that appears when toggle-button is clicked -->
+		<div id="menu-toggle">
+			<!-- main-menu starts here -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../Works/works.html">Works</a></li>
+				<li><a href="../About/about.html">About</a></li>
+				<li><a href="../Repository/repository.html">The Repository</a></li>
+				<!-- sub-menu starts here -->
+				<ul class="sub-menu">
+					<!-- sub-menu direct children -->
+					<li><a href="../Repository/Fact-Dump/fact-dump.html">Facts Dump</a></li>
+					<li><a href="../Repository/Creative-Dump/creative.html">Creative Dump</a></li>
+					<li><a href="../Repository/Writer-Journey/writer-journey.html">Writer's Journey</a></li>
+				</ul>
+				<!-- sub-menu ends here -->
+			</ul>
+			<!-- main-menu ends here -->
+			<!-- footer-in-nav starts here -->
+			<footer class="footer-in-nav">
+				<div class="link-wrapper">
+					<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+				</div>
+			</footer>
+			<!-- footer-in-nav ends here -->
+		</div>
+		<!-- menu-toggle ends here -->
+	</nav>
+	<!-- mobile nav ends here -->
+	<!-- header.main-header can be used for other pages if needed -->
+	<header class="main-header">
+		<div class="header-wrapper">
+			<div class="header-row-wrapper alinblog-wrapper">
+				<div class="image-wrapper">
+					<img class="image-hover-effect" src="Images/myPersonalWebsite_scr.png" alt="alinblog image">
+				</div>
+				<div class="image-wrapper-text alinblog-wrapper-text">
+					<h2>My Personal Website</h2>
+					<p>The very first website I made with blood, sweat, and tears. I was very proud of the results, despite it being riddled with so much lag. The reason for that was because of the unoptimized and abusive usage of images here and there. I also tried to learn how to publish a website to the Internet, and it was quite fun.</p>
+					<address>Redirect to <a href="https://alinblog.herokuapp.com">My Personal Website</a>.</address>
+					
+				</div>
+			</div>
+			<div class="header-row-wrapper boxmodel-wrapper">
+				<div class="image-wrapper-text boxmodel-wrapper-text">
+					<h2>Box Models</h2>
+					<p>For some reason, I couldn't get enough with trying to publish another website to the Internet. Despite the mediocre features of this website, I still poured my all to it. It was also a minor activity of our Web Development course at school.</p>
+					<address>Redirect to <a href="https://boxmodel-alin.herokuapp.com">Box Models</a>.</address>
+				</div>
+				<div class="image-wrapper">
+					<img class="image-hover-effect" src="Images/boxModel_scr.png" alt="box model image">
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- header.main-header ends here -->
+	<!-- 	Content-wrapper and content-container will be used for all other pages.
+			Purpose is to contain the main content. Content-wrapper makes sure content-
+			container does not overflow. Content-container is used to create a blackish
+			background for main content so that it will be readable against the colors
+			of the header.background's background image 
+	-->
+	<div class="content-wrapper">
+		<div class="content-container">
+			<main>
+				<!-- main-wrapper starts here -->
+				<div class="main-wrapper">
+					<h2>My Certifications</h2>
+					<p>Certifications are designated credentials earned by an individual to verify their legitimacy and competence to perform a job. Your certification is typically displayed as a document stating that as a professional, you've been trained, educated and are prepared to meet a specific set of criteria for your role. This statement is awarded only after you've passed the proper assessments administered by a recognized third-party credentialing institution.</p>
+					<!-- image-wrapper starts here -->
+					<div class="image-wrapper">
+						<div class="column">
+							<!-- image -->
+							<img src="Images/diploma_elementary.jpg" alt="my elementary diploma">
+							<!-- image ends -->
+							<!-- image -->
+							<img src="Images/diploma_jhs.jpg" alt="my junior highschool diploma">
+							<!-- image ends -->
+						</div>
+						<div class="column">
+							<!-- image -->
+							<img src="Images/diploma_shs.jpg" alt="my senior highschool diploma">
+							<!-- image ends -->
+							<!-- image -->
+							<img src="Images/certificate_elementary_ssc.jpg" alt="my elementary science class certificate">
+							<!-- image ends -->
+						</div>
+						<div class="column">
+							<!-- image -->
+							<img src="Images/certificate_goodmoral.jpg" alt="my high school good moral certificate">
+							<!-- image ends -->
+							<!-- image -->
+							<img src="Images/certificate_journalism.jpg" alt="my high schooljournalism participation certificate">
+							<!-- image ends -->
+						</div>
+					</div>
+					<!-- image-wrapper ends here -->
+				</div>
+				<!-- main-wrapper ends here -->
+			</main>
+		</div>
+	</div>
+	<!-- content.wrapper ends here -->
+	<!-- Footer will be used in all other pages. -->
+	<footer id="main-footer">
+		<div class="footer-wrapper">
+			<a href="https://mail.google.com/mail/u/1/?to=raileyalin@gmail.com&fs=1&tf=cm" target="_blank">raileyalin@gmail.com | 09605062152
+			</a>
+			<div class="link-wrapper">
+				<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer ends here -->
+</body>
+</html>

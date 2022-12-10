@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- general styles (external) -->
+	<link rel="stylesheet" type="text/css" href="../../styles.css">
+	<!-- mobile nav external stylesheet -->
+	<link rel="stylesheet" href="../../mobile-nav.css">
+	<!-- common header external stylesheet -->
+	<link rel="stylesheet" href="../../common-header.css">
+	<!-- external style sheet exclusively for fact-dumps-webpages -->
+	<link rel="stylesheet" type="text/css" href="fact-dump-card.css">
+	<!-- font awesome icons external stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="../../Images/logo2.ico">
+	<title>Philosophy Facts - Notebook</title>
+	<style>
+		/* url for background img */
+		.background {
+			background-image: url(Images/acropolis-greece.jpg);
+		}
+	</style>
+</head>
+<body>
+	<!-- header.background will be used for all other pages -->
+    <header class="background"></header>
+    <!-- header.background ends here -->
+    <!-- normal-nav starts here  -->
+    <nav id="normal-nav">
+		<!-- normal-nav-wrapper starts here -->
+		<div class="normal-nav-wrapper">
+			<!-- nav-logo starts here -->
+			<div class="nav-logo">
+				<a href="../../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<!-- nav-logo  ends here -->
+			<!-- main-menu starts here -->
+			<!-- ul -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../../index.html"><span>Home</span></a></li>
+				<li><a href="../../Works/works.html"><span>Works</span></a></li>
+				<li><a href="../../About/about.html"><span>About</span></a></li>
+				<li><a href="../../Repository/repository.html"><span>The Repository</span></a>
+					<!-- sub-menu starts here -->
+					<ul class="sub-menu">
+						<!-- sub-menu direct children -->
+						<li><a href="../../Repository/Fact-Dump/fact-dump.html"><span>Fact Dump</span></a></li>
+						<li><a href="../../Repository/Creative-Dump/creative.html"><span>Creative Dump</span></a></li>
+						<li><a href="../../Repository/Writer-Journey/writer-journey.html"><span>Writer's Journey</span></a></li>
+					</ul>
+					<!-- sub-menu ends here -->
+				</li>
+			</ul>
+			<!-- main-menu ends here -->
+		</div>
+		<!-- normal-nav-wrapper ends here -->
+	</nav>
+	<!-- normal-nav ends here -->
+	<!-- mobile nav starts here (will only appear on certain screen sizes) -->
+	<nav id="mobile-nav">
+		<!-- mobile nav scripts -->
+		<script>
+			function myFunction() {
+				var z = document.getElementById("toggle-button");
+				var x = document.getElementById("menu-toggle");
+				if (x.style.visibility === "visible") {
+					x.style.visibility = "hidden";
+					x.style.transform = "translateX(200%)";
+					x.style.opacity = "0";
+					/* put background before button on click */
+					z.style.background = "transparent";
+				}
+				else {
+					x.style.visibility = "visible";
+					x.style.transform = "translateX(100%)";
+					x.style.opacity = "1";
+					/* put background before button on click */
+					z.style.background = "#2d2d2d";
+				}
+			}
+		</script>
+		<!-- mobile nav scripts ends here -->
+		<!-- nav-header starts here -->
+		<div class="nav-header">
+			<div class="logo-wrapper">
+				<a href="../../index.html" style="height: inherit; display: flex; align-items: center; position: relative;">
+					<img style="height: 80%;" src="../../Images/logo2.png" alt="my website's logo">
+					<h2 style="letter-spacing: 5px; font-size: 80%;">THE NOTEBOOK</h2>
+				</a>
+			</div>
+			<button id="toggle-button" onclick="myFunction()">
+				<i class="fa fa-bars fa-2x fa-inverse" aria-hidden="false"></i>
+			</button>
+		</div>
+		<!-- nav-header ends here -->
+		<!-- menu-toggle starts here -->
+		<!-- purpose: the thing that appears when toggle-button is clicked -->
+		<div id="menu-toggle">
+			<!-- main-menu starts here -->
+			<ul class="main-menu">
+				<!-- main-menu direct children -->
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../Works/works.html">Works</a></li>
+				<li><a href="../../About/about.html">About</a></li>
+				<li><a href="../../Repository/repository.html">The Repository</a></li>
+				<!-- sub-menu starts here -->
+				<ul class="sub-menu">
+					<!-- sub-menu direct children -->
+					<li><a href="../../Repository/Fact-Dump/fact-dump.html">Facts Dump</a></li>
+					<li><a href="../../Repository/Creative-Dump/creative.html">Creative Dump</a></li>
+					<li><a href="../../Repository/Writer-Journey/writer-journey.html">Writer's Journey</a></li>
+				</ul>
+				<!-- sub-menu ends here -->
+			</ul>
+			<!-- main-menu ends here -->
+			<!-- footer-in-nav starts here -->
+			<footer class="footer-in-nav">
+				<div class="link-wrapper">
+					<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+				</div>
+			</footer>
+			<!-- footer-in-nav ends here -->
+		</div>
+		<!-- menu-toggle ends here -->
+	</nav>
+	<!-- mobile nav ends here -->
+	<!-- header.main-header can be used for other pages if needed -->
+	<header class="main-header">
+		<div class="text-wrapper">
+			<div class="text-container">
+				<h3>Did you know that...</h3>
+				<p>...there was an ancient philosopher named Diogenes that was treated as a social outcast, albeit for many reason. A record even stated that, Alexander the Great came to visit the infamous philosopher to fulfill one of his wishes and to ask him what he desired. Yet, the philosopher didn't even bat an eye and only replied, "Stand out of my light" which told Alexander that he is blocking the sunlight that Diogenes was enjoying.</p>
+				<cite>Source: Wikipedia</cite>
+			</div>
+		</div>
+	</header>
+	<!-- header.main-header ends here -->
+	<!-- 	Content-wrapper and content-container will be used for all other pages.
+			Purpose is to contain the main content. Content-wrapper makes sure content-
+			container does not overflow. Content-container is used to create a blackish
+			background for main content so that it will be readable against the colors
+			of the header.background's background image 
+	-->
+	<div class="content-wrapper">
+		<div class="content-container">
+			<main>
+				<!-- main-wrapper begins -->
+				<div class="main-wrapper">
+					<!-- fact-dump-nav starts here -->
+					<div class="fact-dump-nav">
+						<div class="fact-dump-nav-wrapper">
+							<a class="fact-dump-nav-a-wrapper" href="fact-dump-rocketscience.html">
+								<div class="fact-dump-nav-a-container">
+									<div class="fact-dump-nav-a-transition"></div>
+									<span>Rocket Science</span>
+								</div>
+							</a>
+							<a class="fact-dump-nav-a-wrapper" href="fact-dump-quantumphysics.html">
+								<div class="fact-dump-nav-a-container">
+									<div class="fact-dump-nav-a-transition"></div>
+									<span>Quantum Physics</span>
+								</div>
+							</a>
+							<a class="fact-dump-nav-a-wrapper" href="fact-dump-philosophy.html">
+								<div class="fact-dump-nav-a-container">
+									<div class="fact-dump-nav-a-transition"></div>
+									<span>Philosophy</span>
+								</div>
+							</a>
+							<a class="fact-dump-nav-a-wrapper" href="fact-dump-cosmology.html">
+								<div class="fact-dump-nav-a-container">
+									<div class="fact-dump-nav-a-transition"></div>
+									<span>Cosmology</span>
+								</div>
+							</a>
+							<a class="fact-dump-nav-a-wrapper" href="fact-dump-history.html">
+								<div class="fact-dump-nav-a-container">
+									<div class="fact-dump-nav-a-transition"></div>
+									<span>Human History</span>
+								</div>
+							</a>
+							<a class="fact-dump-nav-a-wrapper" href="fact-dump-astronomy.html">
+								<div class="fact-dump-nav-a-container">
+									<div class="fact-dump-nav-a-transition"></div>
+									<span>Astronomy</span>
+								</div>
+							</a>
+						</div>
+					</div>
+					<!-- fact-dump-nav ends here -->
+					<!-- main-header-text starts here-->
+					<div class="main-header-text">
+						<h2>What is Philosophy?</h2>
+						<p>Philosophy is the study of the fundamental nature of knowledge, reality, and existence, especially when considered as an academic discipline. Philosophy comes from the Greek word <i>philosophia</i>, meaning "love of wisdom".</p>
+					</div>
+					<!-- main-header-text ends here -->
+					<!-- cards-container starts here -->
+					<div class="cards-container">
+						<!-- card-one starts here -->
+						<div class="card-container-card card-one">
+							<img src="Images/plato.jpg" alt="plato portrait" loading="lazy">
+							<div class="card-transition">
+								<div class="card-transition-text">
+									<h3>Name Imposter</h3>
+									<p>It is possible that Plato's name could just be a pseudonym which roughly translates to "broad" nicknamed by his wrestling coach for having a broad body frame. Plato's real name is said to be Aristocles.</p>
+								</div>
+							</div>
+						</div>
+						<!-- card-one ends here -->
+						<!-- card-two starts here -->
+						<div class="card-container-card card-two">
+							<img style="object-position: 0 30%;" src="Images/anaximander.jpg" alt="anaximander philosopher" loading="lazy">
+							<div class="card-transition">
+								<div class="card-transition-text">
+									<h3>The Person Who Probably Should Be Awarded for Knowing Where Humans Evolved from</h3>
+									<p>Anaximader was a pre-Socratic Greek philosopher who thought that if the first humans were infants, then humans would not have survived. He postulated that humans must have come from species whose infants were stronger than human babies.</p>
+								</div>
+							</div>
+						</div>
+						<!-- card-two ends here -->
+						<!-- card-three starts here -->
+						<div class="card-container-card card-three">
+							<img src="Images/jean sartre.jpg" alt="jean paul sartre" loading="lazy">
+							<div class="card-transition">
+								<div class="card-transition-text">
+									<h3>Ever Heard of Someone Rejecting a Nobel Prize?</h3>
+									<p>Jean-Paul Sartre, a french philosopher, was supposed to be awarded the 1964 Nobel Peace Prize for Literature. However, instead of receiving it, he did the complete opposite which is to do whatever he can to avoid receiving it. He believed that by accepting the award, he would become Jean-Paul Sartre the Nobel Peace Prize Winner, not Jean-Paul Sartre the writer, which he wished to remain.</p>
+								</div>
+							</div>
+						</div>
+						<!-- card-three ends here -->
+                    </div>
+					<!-- cards-container ends here -->
+				</div>
+				<!-- main-wrapper ends here -->
+			</main>
+		</div>
+	</div>
+	<!-- content.wrapper ends here -->
+	<!-- Footer will be used in all other pages. -->
+	<footer id="main-footer">
+		<div class="footer-wrapper">
+			<a href="https://mail.google.com/mail/u/1/?to=raileyalin@gmail.com&fs=1&tf=cm" target="_blank">
+				<p>raileyalin@gmail.com | 09605062152</p>
+			</a>
+			<div class="link-wrapper">
+				<a href="https://facebook.com/ramrailey123" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://twitter.com/DarkBrilliancy" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/channel/UCZnG5UFpHSxnamM2Zkv-Fsg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer ends here -->
+</body>
+</html>

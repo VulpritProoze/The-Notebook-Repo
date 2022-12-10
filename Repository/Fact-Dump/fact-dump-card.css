@@ -1,0 +1,141 @@
+main .main-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 15rem;
+    }
+        main .main-wrapper .main-header-text {
+            text-align: center;
+            display: flex;
+            flex-flow: column wrap;
+            row-gap: 10rem;
+        }
+    /*  styles for main .fact-dump-nav*/
+    /*  purpose: fact dump nav is a navigation within fact dump webpages. */
+    main .fact-dump-nav {
+        width: 100%;
+    }
+        main .fact-dump-nav-wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        main .fact-dump-nav-a-wrapper {
+            text-decoration: none;
+        }
+        /*  note: the reason why this is responsive is because of flex properties. by setting a static width (which in turn disables its ability to suddenly scale with the size of screen which i dont want), i am able to make the items within this container to go to the second row when the screen size is adjusted. however ill have to soon resort to media queries when screen sizes reduces to certain extent. */
+        main .fact-dump-nav-wrapper .fact-dump-nav-a-wrapper .fact-dump-nav-a-container {
+            width: 10rem;
+            height: 100%;
+            border: 2px solid var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-color);
+            position: relative;
+        }
+        main .fact-dump-nav-wrapper .fact-dump-nav-a-wrapper .fact-dump-nav-a-container span {
+            font-size: 95%;	
+            letter-spacing: .7px;			
+        }
+        /* cool transition for .fact-dump-nav links */
+        main .fact-dump-nav .fact-dump-nav-a-container .fact-dump-nav-a-transition {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 0;
+            transition: all .3s ease;
+        }
+            main .fact-dump-nav .fact-dump-nav-a-container:hover .fact-dump-nav-a-transition {
+            height: 100%;
+            background: var(--light-color);
+            }
+            main .fact-dump-nav .fact-dump-nav-a-container:hover span {
+            z-index: 2;
+            color: var(--main-color);
+            font-weight: bold;
+            font-size: 90%;
+            }
+    /*	style rules for cards-container (facts stuff) */
+    /*  purpose: the word cards merely indicate that i am dealing with cards. cards pertain to whatever it is defined obviously. in any case, the cards here refer to whatever the facts respective to the knowledge field webpage the user is in (within the facts dump webpages). for now, i only have 3 facts each field. */
+    main .main-wrapper .cards-container {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+        /*  card-container-card refers to the cards within the cards-container. simply, it is the items within the cards-container. it is simply fact cards */
+        main .cards-container .card-container-card {
+            position: relative;
+            width: 25rem;
+            height: 75vh;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        /*  my cards contain images obviously. these images are cool */
+        main .cards-container .card-container-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /*	when the user hovers over the cards, the cool facts then appear. simply put, at its normal state, the cards are simply images, but when hovered, a cool knowledge or fact will be revealed  */
+        /*  div card-transition is simply the element that i will be using to contain the facts texts that will appear when hovered, along with other cool transition effects that happens when hovered. */
+        main .cards-container .card-container-card .card-transition {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            opacity: 0;
+            border-radius: 9px;
+            visibility: hidden;
+            transition: all .2s ease, visibility .2s linear 0s;
+            /*	style for texts that appear when hovered */
+            display: flex;
+            padding: 3rem;
+            align-items: center;
+            line-height: normal;
+        }
+            /*	style for texts that appear with hovered */
+            main .cards-container .card-container-card .card-transition .card-transition-text {
+                display: flex;
+                flex-direction: column;
+                row-gap: 3rem;
+                font-size: 80%;
+                text-align: justify;
+                line-height: 150%;
+                text-indent: 2rem;
+            }
+                main .cards-container .card-container-card .card-transition .card-transition-text h3 {
+                    text-align: center;
+                }
+                    /* style rules for when the card-container is hovered */
+                    /* what is happening here: when the cards are hovered, these style rules will then be applied to div card-transition. what will happen is that card-transition (which i set to be normally invisible) will become visible alongside with the cool transition effects */
+                    main .cards-container .card-container-card:hover .card-transition {
+                        visibility: visible;
+                        background: rgba(0, 0, 0, .75);
+                        opacity: 1;
+                    /*	ah i dont really understand this. but if this is removed, then the visibility property will have a transition delay as it transitions in. but somehow if i remove the fourth property of the visibility in transition (which is 0.2s... idk what this is), then the visibility have literally zero transition delay as it transitions out. so is transition delay property perhaps only pertains to transitioning in? yet why is it placed on hovered state style rule... */
+                    /*  after several tests, i tried to put a transition delay 0s on the unhovered state... the one that got affected is the transitioning out... very weird but it has given me an insight, and somehow i just did not expect this... i thought it would be the reverse, in that if i placed a transition delay on unhovered state, it would affect the transitioning in, while transitioning out on hovered state, yet somehow it is the reverse. */
+                        transition-delay: 0s;
+                    }
+                    /*	style rule: image zooms on hover as well */
+                    /*  one other reason for wrapping my image with a div container is also to allow me to put creative effects on the images without becoming too ugly. in this case, the container helped to hide all the overflow that occurs when the image is transform scaled. */
+                    main .cards-container .card-container-card img {
+                        transition: all .2s ease;
+                    }
+                    main .cards-container .card-container-card:hover img {
+                        transform: scale(1.55);
+                    }
+
+/*  media query style rules for fact dump webpages */
+@media only screen and (max-width: 550px){
+    main .cards-container .card-container-card {
+        width: 18rem;
+        /*  height should remain the same since i used vh unit which scales with viewport height */
+    }
+    main .cards-container .card-transition {
+        padding: 1.5rem !important;
+    }
+}
