@@ -108,13 +108,11 @@
                 background: rgba(0, 0, 0, 0.7);
                 /* transition properties */
                 opacity: 0;
-                visibility: 0;
                 transform: translateY(-100%);
-                transition: opacity .3s ease, visibility .3s linear 0s, transform .3s ease;
+                transition: opacity .3s ease, transform .3s ease;
             }
                 #writer-gallery label:hover .transition {
                     opacity: 1;
-                    transition-delay: 0s;
                     transform: translateY(0);
                 }
 	</style>
@@ -204,15 +202,20 @@
 				<li><a href="../../index.html">Home</a></li>
 				<li><a href="../../Works/works.html">Works</a></li>
 				<li><a href="../../About/about.html">About</a></li>
-				<li><a href="../../Repository/repository.html">The Repository</a></li>
-				<!-- sub-menu starts here -->
-				<ul class="sub-menu">
-					<!-- sub-menu direct children -->
-					<li><a href="../../Repository/Fact-Dump/fact-dump.html">Facts Dump</a></li>
-					<li><a href="../../Repository/Creative-Dump/creative.html">Creative Dump</a></li>
-					<li><a href="../../Repository/Writer-Journey/writer-journey.html">Writer's Journey</a></li>
-				</ul>
-				<!-- sub-menu ends here -->
+				<!-- li:nth-child(4) -->
+				<li>
+					<!-- sub-menu starts here -->
+					<ul class="sub-menu">
+						<!-- the repository itself -->
+						<li><a href="../../Repository/repository.html">The Repository</a></li>
+						<!-- sub-menu direct children -->
+						<li><a href="../../Repository/Fact-Dump/fact-dump.html">Facts Dump</a></li>
+						<li><a href="../../Repository/Creative-Dump/creative.html">Creative Dump</a></li>
+						<li><a href="../../Repository/Writer-Journey/writer-journey.html">Writer's Journey</a></li>
+					</ul>
+					<!-- sub-menu ends here -->
+				</li>
+				<!-- li:nth-child(4) ends -->
 			</ul>
 			<!-- main-menu ends here -->
 			<!-- footer-in-nav starts here -->
@@ -275,38 +278,38 @@
                         <div class="image-wrapper">
                             <input type="checkbox" id="check1">
                             <label for="check1" class="img1">
-                                <div class="transition"><span>Click to expand/minimize.</span></div>
                                 <img src="Images/storydump_1.jpg" alt="story manuscript" loading="lazy">
+                                <span class="transition">Click to expand/minimize.</span>
                             </label>
                             <input type="checkbox" id="check2">
                             <label for="check2" class="img2">
                                 <img src="Images/storydump_2.jpg" alt="story manuscript" loading="lazy">
-                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                                <span class="transition">Click to expand/minimize.</span>
                             </label>
                             <input type="checkbox" id="check3">
                             <label for="check3" class="img3">
                                 <img src="Images/storydump_3.jpg" alt="story manuscript" loading="lazy">
-                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                                <span class="transition">Click to expand/minimize.</span>
                             </label>
                             <input type="checkbox" id="check4">
                             <label for="check4" class="img4">
                                 <img src="Images/storydump_4.jpg" alt="story manuscript" loading="lazy">
-                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                                <span class="transition">Click to expand/minimize.</span>
                             </label>
                             <input type="checkbox" id="check5">
                             <label for="check5" class="img5">
                                 <img src="Images/storydump_5.jpg" alt="story manuscript" loading="lazy">
-                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                                <span class="transition">Click to expand/minimize.</span>
                             </label>
                             <input type="checkbox" id="check6">
                             <label for="check6" class="img6">
                                 <img src="Images/storydump_6.jpg" alt="story manuscript" loading="lazy">
-                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                                <span class="transition">Click to expand/minimize.</span>
                             </label>
                             <input type="checkbox" id="check7">
                             <label for="check7" class="img7">
                                 <img src="Images/storydump_7.jpg" alt="story manuscript" loading="lazy">
-                                <div class="transition"><span>Click to expand/minimize.</span></div>
+                                <span class="transition">Click to expand/minimize.</span>
                             </label>
                         </div>
                     </div>

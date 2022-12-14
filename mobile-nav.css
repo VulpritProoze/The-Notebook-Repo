@@ -89,7 +89,7 @@
 }
 /*  styles for sub-menu */
 #mobile-nav .sub-menu {
-    flex: 1.9; /*   change this property and you can adjust the gap within sub-menu links */
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -102,18 +102,27 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    flex: 1;
     position: relative;
     border-bottom: .5px solid rgb(39, 37, 37);
 }
 /*  unique styles for main-menu li children */
-#mobile-nav .main-menu > li {
+/*  and also managing the spacing between the elements */
+#mobile-nav .main-menu > li,
+#mobile-nav .main-menu > li:nth-child(4) > .sub-menu > li:first-child {
     background: #0F1012;
+    flex: 1;
 }
+    #mobile-nav .main-menu > li:nth-child(4){
+        flex: 3;
+    }
 /*  unique styles for sub-menu li children */
 #mobile-nav .sub-menu > li {
-    background: rgb(26, 28, 30)
+    background: rgb(26, 28, 30);
+    flex: 1;
 }
+    #mobile-nav .sub-menu >  li:first-child {
+        flex: 1.75 !important; /* override styles from 3 styles above */
+    }
 
 /*  footer styles */
 #mobile-nav .footer-in-nav {
